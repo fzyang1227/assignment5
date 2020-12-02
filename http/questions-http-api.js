@@ -1,8 +1,8 @@
 const questionsDao = require('../daos/questions-dao.js')
 module.exports = function(app) {
 
-    app.get('/api/quizzes/:qzid/questions', (req, res) =>
-        questionsDao.findQuestionsForQuiz(req.params['qzid'])
+    app.get('/api/quizzes/:qid/questions', (req, res) =>
+        questionsDao.findQuestionsForQuiz(req.params['qid'])
             .then(questions => res.json(questions)))
 
     app.get('/api/questions', (req, res) =>
